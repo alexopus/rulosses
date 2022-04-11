@@ -7,18 +7,25 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet">
 
   <style type="text/css">
-    h2 {
+    body {
       font-family: 'Roboto';
+      background-color: #202124;
+      color: #ddd;
+    }
+
+    h2 {
+      font-weight: 700;
       font-size: 20px;
     }
 
     .container {
-      width: 95%;
+      width: 96%;
       margin: 0 auto;
-      padding: 2px;
     }
 
     .container h2 {
@@ -27,1105 +34,1015 @@
       color: #ddd;
     }
 
-    .grid-container {
+    .chart-container {
+      background-color: #111;
+    }
+
+    .table-container {
       display: flex;
       justify-content: center;
     }
 
-    .ritz .waffle a {
+    .waffle {
+      font-family: 'Roboto Condensed', sans-serif;
+      border-collapse: collapse;
+    }
+
+    .waffle td {
+      border: 1px solid #111;
+      white-space: nowrap;
+      text-align: center;
+      vertical-align: middle;
+      direction: ltr;
+      font-size: 10pt;
+      color: #ddd;
+      padding: 2px 3px 2px 3px;
+      background-color: #242021;
+    }
+
+    .waffle .hdr {
+      background-color: #434343;
+    }
+
+    .waffle .src {
+      color: #1155cc;
+    }
+
+    .waffle a {
       color: inherit;
-    }
-
-    .ritz .waffle .s3 {
-      border-bottom: 1px SOLID #000000;
-      background-color: #434343;
-      text-align: center;
-      color: #ddd;
-      font-family: 'Roboto Condensed', sans-serif;
-      font-size: 10pt;
-      vertical-align: middle;
-      white-space: nowrap;
-      direction: ltr;
-      padding: 2px 3px 2px 3px;
-    }
-
-    .ritz .waffle .s0 {
-      border-bottom: 1px SOLID #000000;
-      border-right: 1px SOLID #000000;
-      background-color: #434343;
-      text-align: center;
-      color: #ddd;
-      font-family: 'Roboto Condensed', sans-serif;
-      font-size: 10pt;
-      vertical-align: middle;
-      white-space: nowrap;
-      direction: ltr;
-      padding: 2px 3px 2px 3px;
-    }
-
-    .ritz .waffle .s6 {
-      border-bottom: 1px SOLID #000000;
-      border-right: 1px SOLID #000000;
-      background-color: #222;
-      text-align: left;
-      text-decoration: underline;
-      -webkit-text-decoration-skip: none;
-      text-decoration-skip-ink: none;
-      color: #1155cc;
-      font-family: 'Roboto Condensed', sans-serif;
-      font-size: 10pt;
-      vertical-align: middle;
-      white-space: nowrap;
-      direction: ltr;
-      padding: 2px 3px 2px 3px;
-    }
-
-    .ritz .waffle .s7 {
-      border-right: 1px SOLID #000000;
-      border-bottom: 1px SOLID #000000;
-      background-color: #222;
-      text-align: left;
-      text-decoration: underline;
-      -webkit-text-decoration-skip: none;
-      text-decoration-skip-ink: none;
-      color: #1155cc;
-      font-family: 'Roboto Condensed', sans-serif;
-      font-size: 10pt;
-      vertical-align: middle;
-      white-space: nowrap;
-      direction: ltr;
-      padding: 2px 3px 2px 3px;
-    }
-
-    .ritz .waffle .s8 {
-      border-right: 1px SOLID #000000;
-      background-color: #434343;
-      text-align: center;
-      color: #ddd;
-      font-family: 'Roboto Condensed', sans-serif;
-      font-size: 10pt;
-      vertical-align: middle;
-      white-space: nowrap;
-      direction: ltr;
-      padding: 2px 3px 2px 3px;
-    }
-
-    .ritz .waffle .s4 {
-      border-bottom: 1px SOLID #000000;
-      border-right: 1px SOLID #000000;
-      background-color: #222;
-      text-align: center;
-      color: #ddd;
-      font-family: 'Roboto Condensed', sans-serif;
-      font-size: 10pt;
-      vertical-align: bottom;
-      white-space: nowrap;
-      direction: ltr;
-      padding: 2px 3px 2px 3px;
-    }
-
-    .ritz .waffle .s1 {
-      border-right: 1px SOLID #000000;
-      border-bottom: 1px SOLID #000000;
-      background-color: #434343;
-      text-align: center;
-      color: #ddd;
-      font-family: 'Roboto Condensed', sans-serif;
-      font-size: 10pt;
-      vertical-align: middle;
-      white-space: nowrap;
-      direction: ltr;
-      padding: 2px 3px 2px 3px;
-    }
-
-    .ritz .waffle .s5 {
-      border-bottom: 1px SOLID #000000;
-      border-right: 1px SOLID #000000;
-      background-color: #222;
-      text-align: left;
-      color: #ddd;
-      font-family: 'Roboto Condensed', sans-serif;
-      font-size: 10pt;
-      vertical-align: middle;
-      white-space: nowrap;
-      direction: ltr;
-      padding: 2px 3px 2px 3px;
-    }
-
-    .ritz .waffle .s2 {
-      border-right: 1px SOLID #000000;
-      border-bottom: 1px SOLID #000000;
-      background-color: #434343;
-      text-align: center;
-      color: #ddd;
-      font-family: 'Roboto Condensed', sans-serif;
-      font-size: 10pt;
-      vertical-align: middle;
-      white-space: nowrap;
-      direction: ltr;
-      padding: 2px 3px 2px 3px;
-    }
-
-    .ritz .waffle .s9 {
-      border-right: 1px SOLID #000000;
-      border-bottom: 1px SOLID #000000;
-      background-color: #222;
-      text-align: left;
-      text-decoration: underline;
-      -webkit-text-decoration-skip: none;
-      text-decoration-skip-ink: none;
-      color: #1155cc;
-      font-family: 'Roboto Condensed', sans-serif;
-      font-size: 10pt;
-      vertical-align: middle;
-      white-space: nowrap;
-      direction: ltr;
-      padding: 2px 3px 2px 3px;
     }
   </style>
 </head>
 
-<body style="background-color: #202124; color: white;">
+<body>
   <div class="container">
-    <canvas id="myChart"></canvas>
+
+    <h2>2022 russian military losses in Ukraine</h2>
+
+    <div class="chart-container">
+      <canvas id="myChart" style="position: relative;"></canvas>
+    </div>
+
     <h2>Cummulative russian military losses in Ukraine</h2>
 
-    <div class="ritz grid-container">
+    <div class="table-container">
       <table class="waffle" cellspacing="0" cellpadding="0">
-        <tr style="height: 20px">
-          <td class="s0">date</td>
-          <td class="s0">soldiers</td>
-          <td class="s0">tanks</td>
-          <td class="s0">APV</td>
-          <td class="s0">artillery</td>
-          <td class="s0">MLRS</td>
-          <td class="s0">AA</td>
-          <td class="s0">planes</td>
-          <td class="s0">helicopters</td>
-          <td class="s0">vehicles</td>
-          <td class="s0">boats</td>
-          <td class="s0">fuel<br>tanks</td>
-          <td class="s1">UAV</td>
-          <td class="s2">
+        <tr>
+          <td class="hdr">date</td>
+          <td class="hdr">personnel</td>
+          <td class="hdr">tanks</td>
+          <td class="hdr">APV</td>
+          <td class="hdr">artillery</td>
+          <td class="hdr">MLRS</td>
+          <td class="hdr">AA</td>
+          <td class="hdr">planes</td>
+          <td class="hdr">helicopters</td>
+          <td class="hdr">vehicles</td>
+          <td class="hdr">boats</td>
+          <td class="hdr">fuel<br>tanks</td>
+          <td class="hdr">UAV</td>
+          <td class="hdr">
             <div>special<br>equipment</div>
           </td>
-          <td class="s0">SRBM</td>
-          <td class="s3">source</td>
+          <td class="hdr">SRBM</td>
+          <td class="hdr">source</td>
         </tr>
-        <tr style="height: 20px">
-          <td class="s0">2022-02-24</td>
-          <td class="s4"></td>
-          <td class="s4"></td>
-          <td class="s4"></td>
-          <td class="s4"></td>
-          <td class="s4"></td>
-          <td class="s4"></td>
-          <td class="s4"></td>
-          <td class="s4"></td>
-          <td class="s4"></td>
-          <td class="s4"></td>
-          <td class="s4"></td>
-          <td class="s4"></td>
-          <td class="s4"></td>
-          <td class="s4"></td>
-          <td class="s5"></td>
+        <tr>
+          <td class="hdr">2022-02-24</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="src"></td>
         </tr>
-        <tr style="height: 20px">
-          <td class="s0">2022-02-25</td>
-          <td class="s4"></td>
-          <td class="s4"></td>
-          <td class="s4"></td>
-          <td class="s4"></td>
-          <td class="s4"></td>
-          <td class="s4"></td>
-          <td class="s4"></td>
-          <td class="s4"></td>
-          <td class="s4"></td>
-          <td class="s4"></td>
-          <td class="s4"></td>
-          <td class="s4"></td>
-          <td class="s4"></td>
-          <td class="s4"></td>
-          <td class="s5"></td>
+        <tr>
+          <td class="hdr">2022-02-25</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="src"></td>
         </tr>
-        <tr style="height: 20px">
-          <td class="s0">2022-02-26</td>
-          <td class="s4"></td>
-          <td class="s4"></td>
-          <td class="s4"></td>
-          <td class="s4"></td>
-          <td class="s4"></td>
-          <td class="s4"></td>
-          <td class="s4"></td>
-          <td class="s4"></td>
-          <td class="s4"></td>
-          <td class="s4"></td>
-          <td class="s4"></td>
-          <td class="s4"></td>
-          <td class="s4"></td>
-          <td class="s4"></td>
-          <td class="s5"></td>
+        <tr>
+          <td class="hdr">2022-02-26</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="src"></td>
         </tr>
-        <tr style="height: 20px">
-          <td class="s0">2022-02-27</td>
-          <td class="s4">4300</td>
-          <td class="s4">146</td>
-          <td class="s4">706</td>
-          <td class="s4">49</td>
-          <td class="s4">4</td>
-          <td class="s4"></td>
-          <td class="s4">27</td>
-          <td class="s4">26</td>
-          <td class="s4">30</td>
-          <td class="s4">2</td>
-          <td class="s4">60</td>
-          <td class="s4">2</td>
-          <td class="s4"></td>
-          <td class="s4"></td>
-          <td class="s6"><a target="_blank"
+        <tr>
+          <td class="hdr">2022-02-27</td>
+          <td>4300</td>
+          <td>146</td>
+          <td>706</td>
+          <td>49</td>
+          <td>4</td>
+          <td></td>
+          <td>27</td>
+          <td>26</td>
+          <td>30</td>
+          <td>2</td>
+          <td>60</td>
+          <td>2</td>
+          <td></td>
+          <td></td>
+          <td class="src"><a target="_blank"
               href="https://www.kmu.gov.ua/news/generalnij-shtab-zsu-povidomlyaye">source</a>
           </td>
         </tr>
-        <tr style="height: 20px">
-          <td class="s0">2022-02-28</td>
-          <td class="s4">5300</td>
-          <td class="s4">191</td>
-          <td class="s4">816</td>
-          <td class="s4">74</td>
-          <td class="s4">21</td>
-          <td class="s4">5</td>
-          <td class="s4">29</td>
-          <td class="s4">29</td>
-          <td class="s4">291</td>
-          <td class="s4">2</td>
-          <td class="s4">60</td>
-          <td class="s4">3</td>
-          <td class="s4"></td>
-          <td class="s4"></td>
-          <td class="s6"><a target="_blank"
+        <tr>
+          <td class="hdr">2022-02-28</td>
+          <td>5300</td>
+          <td>191</td>
+          <td>816</td>
+          <td>74</td>
+          <td>21</td>
+          <td>5</td>
+          <td>29</td>
+          <td>29</td>
+          <td>291</td>
+          <td>2</td>
+          <td>60</td>
+          <td>3</td>
+          <td></td>
+          <td></td>
+          <td class="src"><a target="_blank"
               href="https://www.kmu.gov.ua/news/sumarni-oriyentovni-vtrati-voroga-z-2402-po-2802-stanom-na-600">source</a>
           </td>
         </tr>
-        <tr style="height: 20px">
-          <td class="s0">2022-03-01</td>
-          <td class="s4">5710</td>
-          <td class="s4">198</td>
-          <td class="s4">846</td>
-          <td class="s4">77</td>
-          <td class="s4">24</td>
-          <td class="s4">7</td>
-          <td class="s4">29</td>
-          <td class="s4">29</td>
-          <td class="s4">305</td>
-          <td class="s4">2</td>
-          <td class="s4">60</td>
-          <td class="s4">3</td>
-          <td class="s4"></td>
-          <td class="s4"></td>
-          <td class="s6"><a target="_blank"
+        <tr>
+          <td class="hdr">2022-03-01</td>
+          <td>5710</td>
+          <td>198</td>
+          <td>846</td>
+          <td>77</td>
+          <td>24</td>
+          <td>7</td>
+          <td>29</td>
+          <td>29</td>
+          <td>305</td>
+          <td>2</td>
+          <td>60</td>
+          <td>3</td>
+          <td></td>
+          <td></td>
+          <td class="src"><a target="_blank"
               href="https://www.kmu.gov.ua/news/sumarni-oriyentovni-vtrati-protivnika-z-2402-po-0103-stanom-na-0600">source</a>
           </td>
         </tr>
-        <tr style="height: 20px">
-          <td class="s0">2022-03-02</td>
-          <td class="s4">5840</td>
-          <td class="s4">211</td>
-          <td class="s4">862</td>
-          <td class="s4">85</td>
-          <td class="s4">40</td>
-          <td class="s4">9</td>
-          <td class="s4">30</td>
-          <td class="s4">31</td>
-          <td class="s4">355</td>
-          <td class="s4">2</td>
-          <td class="s4">60</td>
-          <td class="s4">3</td>
-          <td class="s4"></td>
-          <td class="s4"></td>
-          <td class="s6"><a target="_blank"
+        <tr>
+          <td class="hdr">2022-03-02</td>
+          <td>5840</td>
+          <td>211</td>
+          <td>862</td>
+          <td>85</td>
+          <td>40</td>
+          <td>9</td>
+          <td>30</td>
+          <td>31</td>
+          <td>355</td>
+          <td>2</td>
+          <td>60</td>
+          <td>3</td>
+          <td></td>
+          <td></td>
+          <td class="src"><a target="_blank"
               href="https://www.kmu.gov.ua/news/generalnij-shtab-zsu-povidomlyaye-pro-bojovi-vtrati-protivnika-z-2402-po-0203">source</a>
           </td>
         </tr>
-        <tr style="height: 20px">
-          <td class="s0">2022-03-03</td>
-          <td class="s4">9000</td>
-          <td class="s4">217</td>
-          <td class="s4">900</td>
-          <td class="s4">90</td>
-          <td class="s4">42</td>
-          <td class="s4">11</td>
-          <td class="s4">30</td>
-          <td class="s4">31</td>
-          <td class="s4">374</td>
-          <td class="s4">2</td>
-          <td class="s4">60</td>
-          <td class="s4">3</td>
-          <td class="s4"></td>
-          <td class="s4"></td>
-          <td class="s6"><a target="_blank"
+        <tr>
+          <td class="hdr">2022-03-03</td>
+          <td>9000</td>
+          <td>217</td>
+          <td>900</td>
+          <td>90</td>
+          <td>42</td>
+          <td>11</td>
+          <td>30</td>
+          <td>31</td>
+          <td>374</td>
+          <td>2</td>
+          <td>60</td>
+          <td>3</td>
+          <td></td>
+          <td></td>
+          <td class="src"><a target="_blank"
               href="https://www.facebook.com/GeneralStaff.ua/posts/263658902613862/">source</a>
           </td>
         </tr>
-        <tr style="height: 20px">
-          <td class="s0">2022-03-04</td>
-          <td class="s4">9166</td>
-          <td class="s4">251</td>
-          <td class="s4">939</td>
-          <td class="s4">105</td>
-          <td class="s4">50</td>
-          <td class="s4">18</td>
-          <td class="s4">33</td>
-          <td class="s4">37</td>
-          <td class="s4">404</td>
-          <td class="s4">2</td>
-          <td class="s4">60</td>
-          <td class="s4">3</td>
-          <td class="s4"></td>
-          <td class="s4"></td>
-          <td class="s6"><a target="_blank"
+        <tr>
+          <td class="hdr">2022-03-04</td>
+          <td>9166</td>
+          <td>251</td>
+          <td>939</td>
+          <td>105</td>
+          <td>50</td>
+          <td>18</td>
+          <td>33</td>
+          <td>37</td>
+          <td>404</td>
+          <td>2</td>
+          <td>60</td>
+          <td>3</td>
+          <td></td>
+          <td></td>
+          <td class="src"><a target="_blank"
               href="https://www.facebook.com/GeneralStaff.ua/posts/264440332535719">source</a>
           </td>
         </tr>
-        <tr style="height: 20px">
-          <td class="s0">2022-03-05</td>
-          <td class="s4">10000</td>
-          <td class="s4">269</td>
-          <td class="s4">945</td>
-          <td class="s4">105</td>
-          <td class="s4">50</td>
-          <td class="s4">19</td>
-          <td class="s4">39</td>
-          <td class="s4">40</td>
-          <td class="s4">409</td>
-          <td class="s4">2</td>
-          <td class="s4">60</td>
-          <td class="s4">3</td>
-          <td class="s4"></td>
-          <td class="s4"></td>
-          <td class="s6"><a target="_blank"
+        <tr>
+          <td class="hdr">2022-03-05</td>
+          <td>10000</td>
+          <td>269</td>
+          <td>945</td>
+          <td>105</td>
+          <td>50</td>
+          <td>19</td>
+          <td>39</td>
+          <td>40</td>
+          <td>409</td>
+          <td>2</td>
+          <td>60</td>
+          <td>3</td>
+          <td></td>
+          <td></td>
+          <td class="src"><a target="_blank"
               href="https://www.facebook.com/GeneralStaff.ua/posts/265240652455687">source</a>
           </td>
         </tr>
-        <tr style="height: 20px">
-          <td class="s0">2022-03-06</td>
-          <td class="s4">11000</td>
-          <td class="s4">285</td>
-          <td class="s4">985</td>
-          <td class="s4">109</td>
-          <td class="s4">50</td>
-          <td class="s4">21</td>
-          <td class="s4">44</td>
-          <td class="s4">48</td>
-          <td class="s4">447</td>
-          <td class="s4">2</td>
-          <td class="s4">60</td>
-          <td class="s4">4</td>
-          <td class="s4"></td>
-          <td class="s4"></td>
-          <td class="s6"><a target="_blank"
+        <tr>
+          <td class="hdr">2022-03-06</td>
+          <td>11000</td>
+          <td>285</td>
+          <td>985</td>
+          <td>109</td>
+          <td>50</td>
+          <td>21</td>
+          <td>44</td>
+          <td>48</td>
+          <td>447</td>
+          <td>2</td>
+          <td>60</td>
+          <td>4</td>
+          <td></td>
+          <td></td>
+          <td class="src"><a target="_blank"
               href="https://www.facebook.com/GeneralStaff.ua/posts/265977672381985?amp%3B__tn__=%2CO%2CP-R">source</a>
           </td>
         </tr>
-        <tr style="height: 20px">
-          <td class="s0">2022-03-07</td>
-          <td class="s4">11000</td>
-          <td class="s4">290</td>
-          <td class="s4">999</td>
-          <td class="s4">117</td>
-          <td class="s4">50</td>
-          <td class="s4">23</td>
-          <td class="s4">46</td>
-          <td class="s4">68</td>
-          <td class="s4">454</td>
-          <td class="s4">3</td>
-          <td class="s4">60</td>
-          <td class="s4">7</td>
-          <td class="s4"></td>
-          <td class="s4"></td>
-          <td class="s6"><a target="_blank"
+        <tr>
+          <td class="hdr">2022-03-07</td>
+          <td>11000</td>
+          <td>290</td>
+          <td>999</td>
+          <td>117</td>
+          <td>50</td>
+          <td>23</td>
+          <td>46</td>
+          <td>68</td>
+          <td>454</td>
+          <td>3</td>
+          <td>60</td>
+          <td>7</td>
+          <td></td>
+          <td></td>
+          <td class="src"><a target="_blank"
               href="https://www.kmu.gov.ua/news/minoboroni-povidomilo-pro-zagalni-bojovi-vtrati-protivnika-z-2402-po-0703">source</a>
           </td>
         </tr>
-        <tr style="height: 20px">
-          <td class="s0">2022-03-08</td>
-          <td class="s4">12000</td>
-          <td class="s4">303</td>
-          <td class="s4">1036</td>
-          <td class="s4">120</td>
-          <td class="s4">56</td>
-          <td class="s4">27</td>
-          <td class="s4">48</td>
-          <td class="s4">80</td>
-          <td class="s4">474</td>
-          <td class="s4">3</td>
-          <td class="s4">60</td>
-          <td class="s4">7</td>
-          <td class="s4"></td>
-          <td class="s4"></td>
-          <td class="s6"><a target="_blank"
+        <tr>
+          <td class="hdr">2022-03-08</td>
+          <td>12000</td>
+          <td>303</td>
+          <td>1036</td>
+          <td>120</td>
+          <td>56</td>
+          <td>27</td>
+          <td>48</td>
+          <td>80</td>
+          <td>474</td>
+          <td>3</td>
+          <td>60</td>
+          <td>7</td>
+          <td></td>
+          <td></td>
+          <td class="src"><a target="_blank"
               href="https://www.facebook.com/GeneralStaff.ua/posts/267473088899110/">source</a>
           </td>
         </tr>
-        <tr style="height: 20px">
-          <td class="s0">2022-03-09</td>
-          <td class="s4">12000</td>
-          <td class="s4">317</td>
-          <td class="s4">1070</td>
-          <td class="s4">120</td>
-          <td class="s4">56</td>
-          <td class="s4">28</td>
-          <td class="s4">49</td>
-          <td class="s4">81</td>
-          <td class="s4">482</td>
-          <td class="s4">3</td>
-          <td class="s4">60</td>
-          <td class="s4">7</td>
-          <td class="s4"></td>
-          <td class="s4"></td>
-          <td class="s6"><a target="_blank"
+        <tr>
+          <td class="hdr">2022-03-09</td>
+          <td>12000</td>
+          <td>317</td>
+          <td>1070</td>
+          <td>120</td>
+          <td>56</td>
+          <td>28</td>
+          <td>49</td>
+          <td>81</td>
+          <td>482</td>
+          <td>3</td>
+          <td>60</td>
+          <td>7</td>
+          <td></td>
+          <td></td>
+          <td class="src"><a target="_blank"
               href="https://www.facebook.com/story.php?story_fbid=268322438814175">source</a>
           </td>
         </tr>
-        <tr style="height: 20px">
-          <td class="s0">2022-03-10</td>
-          <td class="s4">12000</td>
-          <td class="s4">335</td>
-          <td class="s4">1105</td>
-          <td class="s4">123</td>
-          <td class="s4">56</td>
-          <td class="s4">29</td>
-          <td class="s4">49</td>
-          <td class="s4">81</td>
-          <td class="s4">526</td>
-          <td class="s4">3</td>
-          <td class="s4">60</td>
-          <td class="s4">7</td>
-          <td class="s4"></td>
-          <td class="s4"></td>
-          <td class="s6"><a target="_blank"
+        <tr>
+          <td class="hdr">2022-03-10</td>
+          <td>12000</td>
+          <td>335</td>
+          <td>1105</td>
+          <td>123</td>
+          <td>56</td>
+          <td>29</td>
+          <td>49</td>
+          <td>81</td>
+          <td>526</td>
+          <td>3</td>
+          <td>60</td>
+          <td>7</td>
+          <td></td>
+          <td></td>
+          <td class="src"><a target="_blank"
               href="https://www.facebook.com/GeneralStaff.ua/posts/269079492071803">source</a>
           </td>
         </tr>
-        <tr style="height: 20px">
-          <td class="s0">2022-03-11</td>
-          <td class="s4">12000</td>
-          <td class="s4">353</td>
-          <td class="s4">1165</td>
-          <td class="s4">125</td>
-          <td class="s4">58</td>
-          <td class="s4">31</td>
-          <td class="s4">57</td>
-          <td class="s4">83</td>
-          <td class="s4">558</td>
-          <td class="s4">3</td>
-          <td class="s4">60</td>
-          <td class="s4">7</td>
-          <td class="s4"></td>
-          <td class="s4"></td>
-          <td class="s6"><a target="_blank"
+        <tr>
+          <td class="hdr">2022-03-11</td>
+          <td>12000</td>
+          <td>353</td>
+          <td>1165</td>
+          <td>125</td>
+          <td>58</td>
+          <td>31</td>
+          <td>57</td>
+          <td>83</td>
+          <td>558</td>
+          <td>3</td>
+          <td>60</td>
+          <td>7</td>
+          <td></td>
+          <td></td>
+          <td class="src"><a target="_blank"
               href="https://www.kmu.gov.ua/news/minoboroni-povidomilo-zagalni-bojovi-vtrati-protivnika-z-2402-po-1103">source</a>
           </td>
         </tr>
-        <tr style="height: 20px">
-          <td class="s0">2022-03-12</td>
-          <td class="s4">12000</td>
-          <td class="s4">362</td>
-          <td class="s4">1205</td>
-          <td class="s4">135</td>
-          <td class="s4">62</td>
-          <td class="s4">33</td>
-          <td class="s4">58</td>
-          <td class="s4">83</td>
-          <td class="s4">585</td>
-          <td class="s4">3</td>
-          <td class="s4">60</td>
-          <td class="s4">7</td>
-          <td class="s4"></td>
-          <td class="s4"></td>
-          <td class="s6"><a target="_blank"
+        <tr>
+          <td class="hdr">2022-03-12</td>
+          <td>12000</td>
+          <td>362</td>
+          <td>1205</td>
+          <td>135</td>
+          <td>62</td>
+          <td>33</td>
+          <td>58</td>
+          <td>83</td>
+          <td>585</td>
+          <td>3</td>
+          <td>60</td>
+          <td>7</td>
+          <td></td>
+          <td></td>
+          <td class="src"><a target="_blank"
               href="https://www.kmu.gov.ua/news/zagalni-bojovi-vtrati-protivnika-z-2402-po-1203">source</a>
           </td>
         </tr>
-        <tr style="height: 20px">
-          <td class="s0">2022-03-13</td>
-          <td class="s4">12000</td>
-          <td class="s4">374</td>
-          <td class="s4">1226</td>
-          <td class="s4">140</td>
-          <td class="s4">62</td>
-          <td class="s4">34</td>
-          <td class="s4">74</td>
-          <td class="s4">86</td>
-          <td class="s4">600</td>
-          <td class="s4">3</td>
-          <td class="s4">60</td>
-          <td class="s4">7</td>
-          <td class="s4"></td>
-          <td class="s4"></td>
-          <td class="s6"><a target="_blank"
+        <tr>
+          <td class="hdr">2022-03-13</td>
+          <td>12000</td>
+          <td>374</td>
+          <td>1226</td>
+          <td>140</td>
+          <td>62</td>
+          <td>34</td>
+          <td>74</td>
+          <td>86</td>
+          <td>600</td>
+          <td>3</td>
+          <td>60</td>
+          <td>7</td>
+          <td></td>
+          <td></td>
+          <td class="src"><a target="_blank"
               href="https://www.kmu.gov.ua/news/zagalni-bojovi-vtrati-protivnika-z-2402-po-1303">source</a>
           </td>
         </tr>
-        <tr style="height: 20px">
-          <td class="s0">2022-03-14</td>
-          <td class="s4">12000</td>
-          <td class="s4">389</td>
-          <td class="s4">1249</td>
-          <td class="s4">150</td>
-          <td class="s4">64</td>
-          <td class="s4">34</td>
-          <td class="s4">77</td>
-          <td class="s4">90</td>
-          <td class="s4">617</td>
-          <td class="s4">3</td>
-          <td class="s4">60</td>
-          <td class="s4">8</td>
-          <td class="s4"></td>
-          <td class="s4"></td>
-          <td class="s6"><a target="_blank"
+        <tr>
+          <td class="hdr">2022-03-14</td>
+          <td>12000</td>
+          <td>389</td>
+          <td>1249</td>
+          <td>150</td>
+          <td>64</td>
+          <td>34</td>
+          <td>77</td>
+          <td>90</td>
+          <td>617</td>
+          <td>3</td>
+          <td>60</td>
+          <td>8</td>
+          <td></td>
+          <td></td>
+          <td class="src"><a target="_blank"
               href="https://www.kmu.gov.ua/news/zagalni-bojovi-vtrati-protivnika-z-2402-po-1403">source</a>
           </td>
         </tr>
-        <tr style="height: 20px">
-          <td class="s0">2022-03-15</td>
-          <td class="s4">13500</td>
-          <td class="s4">404</td>
-          <td class="s4">1279</td>
-          <td class="s4">150</td>
-          <td class="s4">64</td>
-          <td class="s4">36</td>
-          <td class="s4">81</td>
-          <td class="s4">95</td>
-          <td class="s4">640</td>
-          <td class="s4">3</td>
-          <td class="s4">60</td>
-          <td class="s4">9</td>
-          <td class="s4"></td>
-          <td class="s4"></td>
-          <td class="s6"><a target="_blank"
+        <tr>
+          <td class="hdr">2022-03-15</td>
+          <td>13500</td>
+          <td>404</td>
+          <td>1279</td>
+          <td>150</td>
+          <td>64</td>
+          <td>36</td>
+          <td>81</td>
+          <td>95</td>
+          <td>640</td>
+          <td>3</td>
+          <td>60</td>
+          <td>9</td>
+          <td></td>
+          <td></td>
+          <td class="src"><a target="_blank"
               href="https://www.kmu.gov.ua/news/zagalni-bojovi-vtrati-protivnika-z-2402-po-1503">source</a>
           </td>
         </tr>
-        <tr style="height: 20px">
-          <td class="s0">2022-03-16</td>
-          <td class="s4">13800</td>
-          <td class="s4">430</td>
-          <td class="s4">1375</td>
-          <td class="s4">190</td>
-          <td class="s4">70</td>
-          <td class="s4">43</td>
-          <td class="s4">84</td>
-          <td class="s4">108</td>
-          <td class="s4">819</td>
-          <td class="s4">3</td>
-          <td class="s4">60</td>
-          <td class="s4">11</td>
-          <td class="s4">10</td>
-          <td class="s4"></td>
-          <td class="s6"><a target="_blank"
+        <tr>
+          <td class="hdr">2022-03-16</td>
+          <td>13800</td>
+          <td>430</td>
+          <td>1375</td>
+          <td>190</td>
+          <td>70</td>
+          <td>43</td>
+          <td>84</td>
+          <td>108</td>
+          <td>819</td>
+          <td>3</td>
+          <td>60</td>
+          <td>11</td>
+          <td>10</td>
+          <td></td>
+          <td class="src"><a target="_blank"
               href="https://www.kmu.gov.ua/news/zagalni-bojovi-vtrati-protivnika-z-2402-po-1603">source</a>
           </td>
         </tr>
-        <tr style="height: 20px">
-          <td class="s0">2022-03-17</td>
-          <td class="s4">14000</td>
-          <td class="s4">444</td>
-          <td class="s4">1435</td>
-          <td class="s4">201</td>
-          <td class="s4">72</td>
-          <td class="s4">43</td>
-          <td class="s4">86</td>
-          <td class="s4">108</td>
-          <td class="s4">864</td>
-          <td class="s4">3</td>
-          <td class="s4">60</td>
-          <td class="s4">11</td>
-          <td class="s4">10</td>
-          <td class="s4"></td>
-          <td class="s6"><a target="_blank"
+        <tr>
+          <td class="hdr">2022-03-17</td>
+          <td>14000</td>
+          <td>444</td>
+          <td>1435</td>
+          <td>201</td>
+          <td>72</td>
+          <td>43</td>
+          <td>86</td>
+          <td>108</td>
+          <td>864</td>
+          <td>3</td>
+          <td>60</td>
+          <td>11</td>
+          <td>10</td>
+          <td></td>
+          <td class="src"><a target="_blank"
               href="https://www.kmu.gov.ua/news/zagalni-bojovi-vtrati-protivnika-z-2402-po-1703">source</a>
           </td>
         </tr>
-        <tr style="height: 20px">
-          <td class="s0">2022-03-18</td>
-          <td class="s4">14200</td>
-          <td class="s4">450</td>
-          <td class="s4">1448</td>
-          <td class="s4">205</td>
-          <td class="s4">72</td>
-          <td class="s4">43</td>
-          <td class="s4">93</td>
-          <td class="s4">112</td>
-          <td class="s4">879</td>
-          <td class="s4">3</td>
-          <td class="s4">60</td>
-          <td class="s4">12</td>
-          <td class="s4">11</td>
-          <td class="s4"></td>
-          <td class="s7">
+        <tr>
+          <td class="hdr">2022-03-18</td>
+          <td>14200</td>
+          <td>450</td>
+          <td>1448</td>
+          <td>205</td>
+          <td>72</td>
+          <td>43</td>
+          <td>93</td>
+          <td>112</td>
+          <td>879</td>
+          <td>3</td>
+          <td>60</td>
+          <td>12</td>
+          <td>11</td>
+          <td></td>
+          <td class="src">
             <div><a target="_blank" href="https://www.facebook.com/photo.php?fbid=275118348134584">source</a></div>
           </td>
         </tr>
-        <tr style="height: 20px">
-          <td class="s0">2022-03-19</td>
-          <td class="s4">14400</td>
-          <td class="s4">466</td>
-          <td class="s4">1470</td>
-          <td class="s4">213</td>
-          <td class="s4">72</td>
-          <td class="s4">44</td>
-          <td class="s4">95</td>
-          <td class="s4">115</td>
-          <td class="s4">914</td>
-          <td class="s4">3</td>
-          <td class="s4">60</td>
-          <td class="s4">17</td>
-          <td class="s4">11</td>
-          <td class="s4"></td>
-          <td class="s7">
+        <tr>
+          <td class="hdr">2022-03-19</td>
+          <td>14400</td>
+          <td>466</td>
+          <td>1470</td>
+          <td>213</td>
+          <td>72</td>
+          <td>44</td>
+          <td>95</td>
+          <td>115</td>
+          <td>914</td>
+          <td>3</td>
+          <td>60</td>
+          <td>17</td>
+          <td>11</td>
+          <td></td>
+          <td class="src">
             <div><a target="_blank" href="https://www.facebook.com/photo.php?fbid=275903201389432">source</a></div>
           </td>
         </tr>
-        <tr style="height: 20px">
-          <td class="s0">2022-03-20</td>
-          <td class="s4">14700</td>
-          <td class="s4">476</td>
-          <td class="s4">1487</td>
-          <td class="s4">230</td>
-          <td class="s4">74</td>
-          <td class="s4">44</td>
-          <td class="s4">96</td>
-          <td class="s4">118</td>
-          <td class="s4">947</td>
-          <td class="s4">3</td>
-          <td class="s4">60</td>
-          <td class="s4">21</td>
-          <td class="s4">12</td>
-          <td class="s4"></td>
-          <td class="s6"><a target="_blank"
+        <tr>
+          <td class="hdr">2022-03-20</td>
+          <td>14700</td>
+          <td>476</td>
+          <td>1487</td>
+          <td>230</td>
+          <td>74</td>
+          <td>44</td>
+          <td>96</td>
+          <td>118</td>
+          <td>947</td>
+          <td>3</td>
+          <td>60</td>
+          <td>21</td>
+          <td>12</td>
+          <td></td>
+          <td class="src"><a target="_blank"
               href="https://www.kmu.gov.ua/news/zagalni-bojovi-vtrati-protivnika-z-2402-po-2003">source</a>
           </td>
         </tr>
-        <tr style="height: 20px">
-          <td class="s0">2022-03-21</td>
-          <td class="s4">15000</td>
-          <td class="s4">498</td>
-          <td class="s4">1535</td>
-          <td class="s4">240</td>
-          <td class="s4">80</td>
-          <td class="s4">45</td>
-          <td class="s4">97</td>
-          <td class="s4">121</td>
-          <td class="s4">969</td>
-          <td class="s4">3</td>
-          <td class="s4">60</td>
-          <td class="s4">24</td>
-          <td class="s4">13</td>
-          <td class="s4"></td>
-          <td class="s6"><a target="_blank"
+        <tr>
+          <td class="hdr">2022-03-21</td>
+          <td>15000</td>
+          <td>498</td>
+          <td>1535</td>
+          <td>240</td>
+          <td>80</td>
+          <td>45</td>
+          <td>97</td>
+          <td>121</td>
+          <td>969</td>
+          <td>3</td>
+          <td>60</td>
+          <td>24</td>
+          <td>13</td>
+          <td></td>
+          <td class="src"><a target="_blank"
               href="https://www.kmu.gov.ua/news/minoboroni-povidomlyaye-pro-zagalni-bojovi-vtrati-protivnika-z-2402-po-2103">source</a>
           </td>
         </tr>
-        <tr style="height: 20px">
-          <td class="s0">2022-03-22</td>
-          <td class="s4">15300</td>
-          <td class="s4">509</td>
-          <td class="s4">1556</td>
-          <td class="s4">252</td>
-          <td class="s4">80</td>
-          <td class="s4">45</td>
-          <td class="s4">99</td>
-          <td class="s4">123</td>
-          <td class="s4">1000</td>
-          <td class="s4">3</td>
-          <td class="s4">70</td>
-          <td class="s4">35</td>
-          <td class="s4">15</td>
-          <td class="s4"></td>
-          <td class="s6"><a target="_blank"
+        <tr>
+          <td class="hdr">2022-03-22</td>
+          <td>15300</td>
+          <td>509</td>
+          <td>1556</td>
+          <td>252</td>
+          <td>80</td>
+          <td>45</td>
+          <td>99</td>
+          <td>123</td>
+          <td>1000</td>
+          <td>3</td>
+          <td>70</td>
+          <td>35</td>
+          <td>15</td>
+          <td></td>
+          <td class="src"><a target="_blank"
               href="https://www.kmu.gov.ua/news/minoboroni-informuye-pro-zagalni-bojovi-vtrati-protivnika-z-2402-po-2203">source</a>
           </td>
         </tr>
-        <tr style="height: 20px">
-          <td class="s0">2022-03-23</td>
-          <td class="s4">15600</td>
-          <td class="s4">517</td>
-          <td class="s4">1578</td>
-          <td class="s4">267</td>
-          <td class="s4">80</td>
-          <td class="s4">47</td>
-          <td class="s4">101</td>
-          <td class="s4">124</td>
-          <td class="s4">1008</td>
-          <td class="s4">4</td>
-          <td class="s4">70</td>
-          <td class="s4">42</td>
-          <td class="s4">15</td>
-          <td class="s4"></td>
-          <td class="s7">
+        <tr>
+          <td class="hdr">2022-03-23</td>
+          <td>15600</td>
+          <td>517</td>
+          <td>1578</td>
+          <td>267</td>
+          <td>80</td>
+          <td>47</td>
+          <td>101</td>
+          <td>124</td>
+          <td>1008</td>
+          <td>4</td>
+          <td>70</td>
+          <td>42</td>
+          <td>15</td>
+          <td></td>
+          <td class="src">
             <div><a target="_blank"
                 href="https://www.kmu.gov.ua/news/informaciya-generalnogo-shtabu-zsu-pro-zagalni-bojovi-vtrati-protivnika-z-2402-po-2303">source</a>
             </div>
           </td>
         </tr>
-        <tr style="height: 20px">
-          <td class="s0">2022-03-24</td>
-          <td class="s4">15800</td>
-          <td class="s4">530</td>
-          <td class="s4">1597</td>
-          <td class="s4">280</td>
-          <td class="s4">82</td>
-          <td class="s4">47</td>
-          <td class="s4">108</td>
-          <td class="s4">124</td>
-          <td class="s4">1033</td>
-          <td class="s4">4</td>
-          <td class="s4">72</td>
-          <td class="s4">50</td>
-          <td class="s4">16</td>
-          <td class="s4"></td>
-          <td class="s6"><a target="_blank"
+        <tr>
+          <td class="hdr">2022-03-24</td>
+          <td>15800</td>
+          <td>530</td>
+          <td>1597</td>
+          <td>280</td>
+          <td>82</td>
+          <td>47</td>
+          <td>108</td>
+          <td>124</td>
+          <td>1033</td>
+          <td>4</td>
+          <td>72</td>
+          <td>50</td>
+          <td>16</td>
+          <td></td>
+          <td class="src"><a target="_blank"
               href="https://www.kmu.gov.ua/news/zagalni-bojovi-vtrati-protivnika-z-2402-po-2403">source</a>
           </td>
         </tr>
-        <tr style="height: 20px">
-          <td class="s0">2022-03-25</td>
-          <td class="s4">16100</td>
-          <td class="s4">561</td>
-          <td class="s4">1625</td>
-          <td class="s4">291</td>
-          <td class="s4">90</td>
-          <td class="s4">49</td>
-          <td class="s4">115</td>
-          <td class="s4">125</td>
-          <td class="s4">1089</td>
-          <td class="s4">5</td>
-          <td class="s4">72</td>
-          <td class="s4">53</td>
-          <td class="s4">18</td>
-          <td class="s4"></td>
-          <td class="s6"><a target="_blank"
+        <tr>
+          <td class="hdr">2022-03-25</td>
+          <td>16100</td>
+          <td>561</td>
+          <td>1625</td>
+          <td>291</td>
+          <td>90</td>
+          <td>49</td>
+          <td>115</td>
+          <td>125</td>
+          <td>1089</td>
+          <td>5</td>
+          <td>72</td>
+          <td>53</td>
+          <td>18</td>
+          <td></td>
+          <td class="src"><a target="_blank"
               href="https://www.kmu.gov.ua/news/zagalni-bojovi-vtrati-protivnika-z-2402-po-2503">source</a>
           </td>
         </tr>
-        <tr style="height: 20px">
-          <td class="s0">2022-03-26</td>
-          <td class="s4">16400</td>
-          <td class="s4">575</td>
-          <td class="s4">1640</td>
-          <td class="s4">293</td>
-          <td class="s4">91</td>
-          <td class="s4">51</td>
-          <td class="s4">117</td>
-          <td class="s4">127</td>
-          <td class="s4">1131</td>
-          <td class="s4">7</td>
-          <td class="s4">73</td>
-          <td class="s4">56</td>
-          <td class="s4">19</td>
-          <td class="s4">2</td>
-          <td class="s6"><a target="_blank"
+        <tr>
+          <td class="hdr">2022-03-26</td>
+          <td>16400</td>
+          <td>575</td>
+          <td>1640</td>
+          <td>293</td>
+          <td>91</td>
+          <td>51</td>
+          <td>117</td>
+          <td>127</td>
+          <td>1131</td>
+          <td>7</td>
+          <td>73</td>
+          <td>56</td>
+          <td>19</td>
+          <td>2</td>
+          <td class="src"><a target="_blank"
               href="https://www.kmu.gov.ua/news/zagalni-bojovi-vtrati-protivnika-z-2402-po-2603">source</a>
           </td>
         </tr>
-        <tr style="height: 20px">
-          <td class="s0">2022-03-27</td>
-          <td class="s4">16600</td>
-          <td class="s4">582</td>
-          <td class="s4">1664</td>
-          <td class="s4">294</td>
-          <td class="s4">93</td>
-          <td class="s4">52</td>
-          <td class="s4">121</td>
-          <td class="s4">127</td>
-          <td class="s4">1144</td>
-          <td class="s4">7</td>
-          <td class="s4">73</td>
-          <td class="s4">56</td>
-          <td class="s4">21</td>
-          <td class="s4">4</td>
-          <td class="s6"><a target="_blank"
+        <tr>
+          <td class="hdr">2022-03-27</td>
+          <td>16600</td>
+          <td>582</td>
+          <td>1664</td>
+          <td>294</td>
+          <td>93</td>
+          <td>52</td>
+          <td>121</td>
+          <td>127</td>
+          <td>1144</td>
+          <td>7</td>
+          <td>73</td>
+          <td>56</td>
+          <td>21</td>
+          <td>4</td>
+          <td class="src"><a target="_blank"
               href="https://www.kmu.gov.ua/news/zagalni-bojovi-vtrati-protivnika-z-2402-po-2703">source</a>
           </td>
         </tr>
-        <tr style="height: 20px">
-          <td class="s0">2022-03-28</td>
-          <td class="s4">17000</td>
-          <td class="s4">586</td>
-          <td class="s4">1694</td>
-          <td class="s4">302</td>
-          <td class="s4">95</td>
-          <td class="s4">54</td>
-          <td class="s4">123</td>
-          <td class="s4">127</td>
-          <td class="s4">1150</td>
-          <td class="s4">7</td>
-          <td class="s4">73</td>
-          <td class="s4">66</td>
-          <td class="s4">21</td>
-          <td class="s4">4</td>
-          <td class="s6"><a target="_blank"
+        <tr>
+          <td class="hdr">2022-03-28</td>
+          <td>17000</td>
+          <td>586</td>
+          <td>1694</td>
+          <td>302</td>
+          <td>95</td>
+          <td>54</td>
+          <td>123</td>
+          <td>127</td>
+          <td>1150</td>
+          <td>7</td>
+          <td>73</td>
+          <td>66</td>
+          <td>21</td>
+          <td>4</td>
+          <td class="src"><a target="_blank"
               href="https://www.kmu.gov.ua/news/zagalni-bojovi-vtrati-protivnika-z-2402-po-2803">source</a>
           </td>
         </tr>
-        <tr style="height: 20px">
-          <td class="s0">2022-03-29</td>
-          <td class="s4">17200</td>
-          <td class="s4">597</td>
-          <td class="s4">1710</td>
-          <td class="s4">303</td>
-          <td class="s4">96</td>
-          <td class="s4">54</td>
-          <td class="s4">127</td>
-          <td class="s4">129</td>
-          <td class="s4">1178</td>
-          <td class="s4">7</td>
-          <td class="s4">73</td>
-          <td class="s4">71</td>
-          <td class="s4">21</td>
-          <td class="s4">4</td>
-          <td class="s6"><a target="_blank"
+        <tr>
+          <td class="hdr">2022-03-29</td>
+          <td>17200</td>
+          <td>597</td>
+          <td>1710</td>
+          <td>303</td>
+          <td>96</td>
+          <td>54</td>
+          <td>127</td>
+          <td>129</td>
+          <td>1178</td>
+          <td>7</td>
+          <td>73</td>
+          <td>71</td>
+          <td>21</td>
+          <td>4</td>
+          <td class="src"><a target="_blank"
               href="https://www.kmu.gov.ua/news/zagalni-bojovi-vtrati-protivnika-z-2402-po-2903">source</a>
           </td>
         </tr>
-        <tr style="height: 20px">
-          <td class="s0">2022-03-30</td>
-          <td class="s4">17300</td>
-          <td class="s4">605</td>
-          <td class="s4">1723</td>
-          <td class="s4">305</td>
-          <td class="s4">96</td>
-          <td class="s4">54</td>
-          <td class="s4">131</td>
-          <td class="s4">131</td>
-          <td class="s4">1184</td>
-          <td class="s4">7</td>
-          <td class="s4">75</td>
-          <td class="s4">81</td>
-          <td class="s4">21</td>
-          <td class="s4">4</td>
-          <td class="s7">
+        <tr>
+          <td class="hdr">2022-03-30</td>
+          <td>17300</td>
+          <td>605</td>
+          <td>1723</td>
+          <td>305</td>
+          <td>96</td>
+          <td>54</td>
+          <td>131</td>
+          <td>131</td>
+          <td>1184</td>
+          <td>7</td>
+          <td>75</td>
+          <td>81</td>
+          <td>21</td>
+          <td>4</td>
+          <td class="src">
             <div><a target="_blank" href="https://www.facebook.com/photo.php?fbid=283844337261985">source</a></div>
           </td>
         </tr>
-        <tr style="height: 20px">
-          <td class="s0">2022-03-31</td>
-          <td class="s4">17500</td>
-          <td class="s4">614</td>
-          <td class="s4">1735</td>
-          <td class="s4">311</td>
-          <td class="s4">96</td>
-          <td class="s4">54</td>
-          <td class="s4">135</td>
-          <td class="s4">131</td>
-          <td class="s4">1201</td>
-          <td class="s4">7</td>
-          <td class="s4">75</td>
-          <td class="s4">83</td>
-          <td class="s4">22</td>
-          <td class="s4">4</td>
-          <td class="s6"><a target="_blank"
+        <tr>
+          <td class="hdr">2022-03-31</td>
+          <td>17500</td>
+          <td>614</td>
+          <td>1735</td>
+          <td>311</td>
+          <td>96</td>
+          <td>54</td>
+          <td>135</td>
+          <td>131</td>
+          <td>1201</td>
+          <td>7</td>
+          <td>75</td>
+          <td>83</td>
+          <td>22</td>
+          <td>4</td>
+          <td class="src"><a target="_blank"
               href="https://www.kmu.gov.ua/news/zagalni-bojovi-vtrati-protivnika-z-24022022-po-31032022">source</a>
           </td>
         </tr>
-        <tr style="height: 20px">
-          <td class="s0">2022-04-01</td>
-          <td class="s4">17700</td>
-          <td class="s4">625</td>
-          <td class="s4">1751</td>
-          <td class="s4">316</td>
-          <td class="s4">96</td>
-          <td class="s4">54</td>
-          <td class="s4">143</td>
-          <td class="s4">131</td>
-          <td class="s4">1220</td>
-          <td class="s4">7</td>
-          <td class="s4">76</td>
-          <td class="s4">85</td>
-          <td class="s4">24</td>
-          <td class="s4">4</td>
-          <td class="s6"><a target="_blank"
+        <tr>
+          <td class="hdr">2022-04-01</td>
+          <td>17700</td>
+          <td>625</td>
+          <td>1751</td>
+          <td>316</td>
+          <td>96</td>
+          <td>54</td>
+          <td>143</td>
+          <td>131</td>
+          <td>1220</td>
+          <td>7</td>
+          <td>76</td>
+          <td>85</td>
+          <td>24</td>
+          <td>4</td>
+          <td class="src"><a target="_blank"
               href="https://www.kmu.gov.ua/news/zagalni-bojovi-vtrati-protivnika-z-24022022-po-01042022">source</a>
           </td>
         </tr>
-        <tr style="height: 20px">
-          <td class="s0">2022-04-02</td>
-          <td class="s4">17800</td>
-          <td class="s4">631</td>
-          <td class="s4">1776</td>
-          <td class="s4">317</td>
-          <td class="s4">100</td>
-          <td class="s4">54</td>
-          <td class="s4">143</td>
-          <td class="s4">134</td>
-          <td class="s4">1236</td>
-          <td class="s4">7</td>
-          <td class="s4">76</td>
-          <td class="s4">87</td>
-          <td class="s4">24</td>
-          <td class="s4">4</td>
-          <td class="s6"><a target="_blank"
+        <tr>
+          <td class="hdr">2022-04-02</td>
+          <td>17800</td>
+          <td>631</td>
+          <td>1776</td>
+          <td>317</td>
+          <td>100</td>
+          <td>54</td>
+          <td>143</td>
+          <td>134</td>
+          <td>1236</td>
+          <td>7</td>
+          <td>76</td>
+          <td>87</td>
+          <td>24</td>
+          <td>4</td>
+          <td class="src"><a target="_blank"
               href="https://www.kmu.gov.ua/news/zagalni-bojovi-vtrati-protivnika-z-2402-po-0204">source</a>
           </td>
         </tr>
-        <tr style="height: 20px">
-          <td class="s0">2022-04-03</td>
-          <td class="s4">18000</td>
-          <td class="s4">644</td>
-          <td class="s4">1830</td>
-          <td class="s4">325</td>
-          <td class="s4">105</td>
-          <td class="s4">54</td>
-          <td class="s4">143</td>
-          <td class="s4">134</td>
-          <td class="s4">1249</td>
-          <td class="s4">7</td>
-          <td class="s4">76</td>
-          <td class="s4">89</td>
-          <td class="s4">24</td>
-          <td class="s4">4</td>
-          <td class="s6"><a target="_blank"
+        <tr>
+          <td class="hdr">2022-04-03</td>
+          <td>18000</td>
+          <td>644</td>
+          <td>1830</td>
+          <td>325</td>
+          <td>105</td>
+          <td>54</td>
+          <td>143</td>
+          <td>134</td>
+          <td>1249</td>
+          <td>7</td>
+          <td>76</td>
+          <td>89</td>
+          <td>24</td>
+          <td>4</td>
+          <td class="src"><a target="_blank"
               href="https://www.kmu.gov.ua/news/zagalni-bojovi-vtrati-protivnika-z-24022022-po-03042022">source</a>
           </td>
         </tr>
-        <tr style="height: 20px">
-          <td class="s0">2022-04-04</td>
-          <td class="s4">18300</td>
-          <td class="s4">647</td>
-          <td class="s4">1844</td>
-          <td class="s4">330</td>
-          <td class="s4">107</td>
-          <td class="s4">54</td>
-          <td class="s4">147</td>
-          <td class="s4">134</td>
-          <td class="s4">1273</td>
-          <td class="s4">7</td>
-          <td class="s4">76</td>
-          <td class="s4">92</td>
-          <td class="s4">25</td>
-          <td class="s4">4</td>
-          <td class="s7">
+        <tr>
+          <td class="hdr">2022-04-04</td>
+          <td>18300</td>
+          <td>647</td>
+          <td>1844</td>
+          <td>330</td>
+          <td>107</td>
+          <td>54</td>
+          <td>147</td>
+          <td>134</td>
+          <td>1273</td>
+          <td>7</td>
+          <td>76</td>
+          <td>92</td>
+          <td>25</td>
+          <td>4</td>
+          <td class="src">
             <div><a target="_blank" href="https://www.facebook.com/photo.php?fbid=287451636901255">source</a></div>
           </td>
         </tr>
-        <tr style="height: 20px">
-          <td class="s0">2022-04-05</td>
-          <td class="s4">18500</td>
-          <td class="s4">676</td>
-          <td class="s4">1858</td>
-          <td class="s4">332</td>
-          <td class="s4">107</td>
-          <td class="s4">55</td>
-          <td class="s4">150</td>
-          <td class="s4">134</td>
-          <td class="s4">1322</td>
-          <td class="s4">7</td>
-          <td class="s4">76</td>
-          <td class="s4">94</td>
-          <td class="s4">25</td>
-          <td class="s4">4</td>
-          <td class="s6"><a target="_blank"
+        <tr>
+          <td class="hdr">2022-04-05</td>
+          <td>18500</td>
+          <td>676</td>
+          <td>1858</td>
+          <td>332</td>
+          <td>107</td>
+          <td>55</td>
+          <td>150</td>
+          <td>134</td>
+          <td>1322</td>
+          <td>7</td>
+          <td>76</td>
+          <td>94</td>
+          <td>25</td>
+          <td>4</td>
+          <td class="src"><a target="_blank"
               href="https://www.kmu.gov.ua/news/zagalni-bojovi-vtrati-protivnika-z-2402-po-0504">source</a>
           </td>
         </tr>
-        <tr style="height: 20px">
-          <td class="s0">2022-04-06</td>
-          <td class="s4">18600</td>
-          <td class="s4">684</td>
-          <td class="s4">1861</td>
-          <td class="s4">332</td>
-          <td class="s4">107</td>
-          <td class="s4">55</td>
-          <td class="s4">150</td>
-          <td class="s4">135</td>
-          <td class="s4">1324</td>
-          <td class="s4">7</td>
-          <td class="s4">76</td>
-          <td class="s4">96</td>
-          <td class="s4">25</td>
-          <td class="s4">4</td>
-          <td class="s6"><a target="_blank"
+        <tr>
+          <td class="hdr">2022-04-06</td>
+          <td>18600</td>
+          <td>684</td>
+          <td>1861</td>
+          <td>332</td>
+          <td>107</td>
+          <td>55</td>
+          <td>150</td>
+          <td>135</td>
+          <td>1324</td>
+          <td>7</td>
+          <td>76</td>
+          <td>96</td>
+          <td>25</td>
+          <td>4</td>
+          <td class="src"><a target="_blank"
               href="https://www.kmu.gov.ua/news/zagalni-bojovi-vtrati-protivnika-z-24022022-po-06042022">source</a>
           </td>
         </tr>
-        <tr style="height: 20px">
-          <td class="s0">2022-04-07</td>
-          <td class="s4">18900</td>
-          <td class="s4">698</td>
-          <td class="s4">1891</td>
-          <td class="s4">332</td>
-          <td class="s4">108</td>
-          <td class="s4">55</td>
-          <td class="s4">150</td>
-          <td class="s4">135</td>
-          <td class="s4">1358</td>
-          <td class="s4">7</td>
-          <td class="s4">76</td>
-          <td class="s4">111</td>
-          <td class="s4">25</td>
-          <td class="s4">4</td>
-          <td class="s6"><a target="_blank"
+        <tr>
+          <td class="hdr">2022-04-07</td>
+          <td>18900</td>
+          <td>698</td>
+          <td>1891</td>
+          <td>332</td>
+          <td>108</td>
+          <td>55</td>
+          <td>150</td>
+          <td>135</td>
+          <td>1358</td>
+          <td>7</td>
+          <td>76</td>
+          <td>111</td>
+          <td>25</td>
+          <td>4</td>
+          <td class="src"><a target="_blank"
               href="https://www.kmu.gov.ua/news/zagalni-bojovi-vtrati-protivnika-z-2402-po-0704">source</a>
           </td>
         </tr>
-        <tr style="height: 20px">
-          <td class="s0">2022-04-08</td>
-          <td class="s4">19000</td>
-          <td class="s4">700</td>
-          <td class="s4">1891</td>
-          <td class="s4">333</td>
-          <td class="s4">108</td>
-          <td class="s4">55</td>
-          <td class="s4">150</td>
-          <td class="s4">135</td>
-          <td class="s4">1361</td>
-          <td class="s4">7</td>
-          <td class="s4">76</td>
-          <td class="s4">112</td>
-          <td class="s4">25</td>
-          <td class="s4">4</td>
-          <td class="s6"><a target="_blank"
+        <tr>
+          <td class="hdr">2022-04-08</td>
+          <td>19000</td>
+          <td>700</td>
+          <td>1891</td>
+          <td>333</td>
+          <td>108</td>
+          <td>55</td>
+          <td>150</td>
+          <td>135</td>
+          <td>1361</td>
+          <td>7</td>
+          <td>76</td>
+          <td>112</td>
+          <td>25</td>
+          <td>4</td>
+          <td class="src"><a target="_blank"
               href="https://www.kmu.gov.ua/news/zagalni-bojovi-vtrati-protivnika-z-2402-po-0804">source</a>
           </td>
         </tr>
-        <tr style="height: 20px">
-          <td class="s0">2022-04-09</td>
-          <td class="s4">19100</td>
-          <td class="s4">705</td>
-          <td class="s4">1895</td>
-          <td class="s4">335</td>
-          <td class="s4">108</td>
-          <td class="s4">55</td>
-          <td class="s4">151</td>
-          <td class="s4">136</td>
-          <td class="s4">1363</td>
-          <td class="s4">7</td>
-          <td class="s4">76</td>
-          <td class="s4">112</td>
-          <td class="s4">25</td>
-          <td class="s4">4</td>
-          <td class="s6"><a target="_blank"
+        <tr>
+          <td class="hdr">2022-04-09</td>
+          <td>19100</td>
+          <td>705</td>
+          <td>1895</td>
+          <td>335</td>
+          <td>108</td>
+          <td>55</td>
+          <td>151</td>
+          <td>136</td>
+          <td>1363</td>
+          <td>7</td>
+          <td>76</td>
+          <td>112</td>
+          <td>25</td>
+          <td>4</td>
+          <td class="src"><a target="_blank"
               href="https://www.kmu.gov.ua/news/zagalni-bojovi-vtrati-protivnika-z-2402-po-0904">source</a>
           </td>
         </tr>
-        <tr style="height: 20px">
-          <td class="s8">2022-04-10</td>
-          <td class="s4">19300</td>
-          <td class="s4">722</td>
-          <td class="s4">1911</td>
-          <td class="s4">342</td>
-          <td class="s4">108</td>
-          <td class="s4">55</td>
-          <td class="s4">152</td>
-          <td class="s4">137</td>
-          <td class="s4">1384</td>
-          <td class="s4">7</td>
-          <td class="s4">76</td>
-          <td class="s4">112</td>
-          <td class="s4">25</td>
-          <td class="s4">4</td>
-          <td class="s9">
+        <tr>
+          <td class="hdr">2022-04-10</td>
+          <td>19300</td>
+          <td>722</td>
+          <td>1911</td>
+          <td>342</td>
+          <td>108</td>
+          <td>55</td>
+          <td>152</td>
+          <td>137</td>
+          <td>1384</td>
+          <td>7</td>
+          <td>76</td>
+          <td>112</td>
+          <td>25</td>
+          <td>4</td>
+          <td class="src">
             <div><a target="_blank" href="https://www.facebook.com/photo.php?fbid=291766983136387">source</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td class="hdr">2022-04-11</td>
+          <td>19500</td>
+          <td>725</td>
+          <td>1923</td>
+          <td>347</td>
+          <td>111</td>
+          <td>55</td>
+          <td>154</td>
+          <td>137</td>
+          <td>1384</td>
+          <td>7</td>
+          <td>76</td>
+          <td>119</td>
+          <td>25</td>
+          <td>4</td>
+          <td class="src">
+            <div><a target="_blank"
+                href="https://www.kmu.gov.ua/news/zagalni-bojovi-vtrati-protivnika-z-24022022-po-11042022">source</a>
+            </div>
           </td>
         </tr>
       </table>
@@ -1142,7 +1059,8 @@
       '14.03', '15.03', '16.03', '17.03', '18.03', '19.03', '20.03',
       '21.03', '22.03', '23.03', '24.03', '25.03', '26.03', '27.03',
       '28.03', '29.03', '30.03', '31.03', '01.04', '02.04', '03.04',
-      '04.04', '05.04', '06.04', '07.04', '08.04', '09.04', '10.04'
+      '04.04', '05.04', '06.04', '07.04', '08.04', '09.04', '10.04',
+      '11.04'
     ];
 
     const personnelData = [
@@ -1152,7 +1070,8 @@
       0, 1500, 300, 200, 200, 200, 300,
       300, 300, 300, 200, 300, 300, 200,
       400, 200, 100, 200, 200, 100, 200,
-      300, 200, 100, 300, 100, 100, 200
+      300, 200, 100, 300, 100, 100, 200,
+      200
     ];
 
     const tanksData = [
@@ -1162,7 +1081,8 @@
       15, 15, 26, 14, 6, 16, 10,
       22, 11, 8, 13, 31, 14, 7,
       4, 11, 8, 9, 11, 6, 13,
-      3, 29, 8, 14, 2, 5, 17
+      3, 29, 8, 14, 2, 5, 17,
+      3
     ];
 
     const apvData = [
@@ -1172,7 +1092,8 @@
       23, 30, 96, 60, 13, 22, 17,
       48, 21, 22, 19, 28, 15, 24,
       30, 16, 13, 12, 16, 25, 54,
-      14, 14, 3, 30, 0, 4, 16
+      14, 14, 3, 30, 0, 4, 16,
+      12
     ];
 
     const artilleryData = [
@@ -1182,7 +1103,8 @@
       10, 0, 40, 11, 4, 8, 17,
       10, 12, 15, 13, 11, 2, 1,
       8, 1, 2, 6, 5, 1, 8,
-      5, 2, 0, 0, 1, 2, 7
+      5, 2, 0, 0, 1, 2, 7,
+      5
     ];
 
     const mlrsData = [
@@ -1192,7 +1114,8 @@
       2, 0, 6, 2, 0, 0, 2,
       6, 0, 0, 2, 8, 1, 2,
       2, 1, 0, 0, 0, 4, 5,
-      2, 0, 0, 1, 0, 0, 0
+      2, 0, 0, 1, 0, 0, 0,
+      3
     ];
 
     const aaData = [
@@ -1202,7 +1125,8 @@
       0, 2, 7, 0, 0, 1, 0,
       1, 0, 2, 0, 2, 2, 1,
       2, 0, 0, 0, 0, 0, 0,
-      0, 1, 0, 0, 0, 0, 0
+      0, 1, 0, 0, 0, 0, 0,
+      0
     ];
 
     const planesData = [
@@ -1212,7 +1136,8 @@
       3, 4, 3, 2, 7, 2, 1,
       1, 2, 2, 7, 7, 2, 4,
       2, 4, 4, 4, 8, 0, 0,
-      4, 3, 0, 0, 0, 1, 1
+      4, 3, 0, 0, 0, 1, 1,
+      2
     ];
 
     const helicoptersData = [
@@ -1222,7 +1147,8 @@
       4, 5, 13, 0, 4, 3, 3,
       3, 2, 1, 0, 1, 2, 0,
       0, 2, 2, 0, 0, 3, 0,
-      0, 0, 1, 0, 0, 1, 1
+      0, 0, 1, 0, 0, 1, 1,
+      0
     ];
 
     const vehiclesData = [
@@ -1232,7 +1158,8 @@
       17, 23, 179, 45, 15, 35, 33,
       22, 31, 8, 25, 56, 42, 13,
       6, 28, 6, 17, 19, 16, 13,
-      24, 49, 2, 34, 3, 2, 21
+      24, 49, 2, 34, 3, 2, 21,
+      3
     ];
 
     const boatsData = [
@@ -1242,7 +1169,8 @@
       0, 0, 0, 0, 0, 0, 0,
       0, 0, 1, 0, 1, 2, 0,
       0, 0, 0, 0, 0, 0, 0,
-      0, 0, 0, 0, 0, 0, 0
+      0, 0, 0, 0, 0, 0, 0,
+      0
     ];
 
     const fuelTanksData = [
@@ -1252,7 +1180,8 @@
       0, 0, 0, 0, 0, 0, 0,
       0, 10, 0, 2, 0, 1, 0,
       0, 0, 2, 0, 1, 0, 0,
-      0, 0, 0, 0, 0, 0, 0
+      0, 0, 0, 0, 0, 0, 0,
+      0
     ];
 
     const uavData = [
@@ -1262,7 +1191,8 @@
       1, 1, 2, 0, 1, 5, 4,
       3, 11, 7, 8, 3, 3, 0,
       10, 5, 10, 2, 2, 2, 2,
-      3, 2, 2, 15, 1, 0, 0
+      3, 2, 2, 15, 1, 0, 0,
+      7
     ];
 
     const specialData = [
@@ -1272,7 +1202,8 @@
       0, 0, 10, 0, 1, 0, 1,
       1, 2, 0, 1, 2, 1, 2,
       0, 0, 0, 1, 2, 0, 0,
-      1, 0, 0, 0, 0, 0, 0
+      1, 0, 0, 0, 0, 0, 0,
+      0
     ];
 
     const srbmData = [
@@ -1282,7 +1213,8 @@
       0, 0, 0, 0, 0, 0, 0,
       0, 0, 0, 0, 0, 2, 2,
       0, 0, 0, 0, 0, 0, 0,
-      0, 0, 0, 0, 0, 0, 0
+      0, 0, 0, 0, 0, 0, 0,
+      0
     ];
 
     const data = {
@@ -1367,18 +1299,13 @@
       type: 'bar',
       data: data,
       options: {
+        layout: {
+          padding: 1
+        },
         plugins: {
-          title: {
-            display: true,
-            text: '2022 russian military losses in Ukraine',
-            color: "#ddd",
-            font: {
-              size: 20,
-              family: "'Roboto Condensed', sans-serif"
-            },
-          },
           legend: {
             display: true,
+            position: 'bottom',
             labels: {
               color: '#ddd',
               font: {
@@ -1420,7 +1347,6 @@
           },
           y: {
             stacked: true,
-            beginAtZero: false,
             ticks: {
               color: "#ddd",
               precision: 0
