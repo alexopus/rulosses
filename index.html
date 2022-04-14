@@ -45,6 +45,12 @@
       background-color: #111;
     }
 
+    .controls {
+      display: flex;
+      justify-content: center;
+      padding-bottom: 8px;
+    }
+
     .table-container {
       display: flex;
       justify-content: center;
@@ -80,6 +86,34 @@
       font-size: 14px;
       color: inherit;
     }
+
+    button.btn {
+      font-family: 'Roboto Condensed', sans-serif;
+      padding: .25rem .5rem;
+      font-size: .875rem;
+      cursor: pointer;
+      border: 1px #aaa solid;
+      background-color: #202124;
+      color: #ddd;
+    }
+
+    button.btn:hover {
+      background-color: #434343;
+    }
+
+    button.btn-g {
+      border-radius: 0;
+    }
+
+    button.btn-g-left {
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+
+    button.btn-g-right {
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
   </style>
 </head>
 
@@ -89,7 +123,12 @@
     <h2>2022 russian military losses in Ukraine</h2>
 
     <div class="chart-container">
-      <canvas id="myChart" style="position: relative;"></canvas>
+      <canvas id="chart" style="position: relative;"></canvas>
+      <div class="controls">
+        <button id="showall" class="btn btn-g-left">show all</button>
+        <button id="hideall" class="btn btn-g-right">hide all</button>
+        <!-- <button id="toggleall" class="btn btn-g-right">toggle all</button> -->
+      </div>
     </div>
 
     <p class="note">* Official <a target="_blank" href="https://www.kmu.gov.ua/news/generalnij-shtab-zsu-povidomlyaye">source</a> for
@@ -1300,73 +1339,73 @@
         {
           label: 'tanks',
           data: tanksData,
-          backgroundColor: "#0077b6",
+          backgroundColor: "#0077b6"
         },
         {
           label: 'APV',
           data: apvData,
-          backgroundColor: "#588157",
+          backgroundColor: "#588157"
         },
         {
           label: 'artillery',
           data: artilleryData,
-          backgroundColor: "#90e0ef",
+          backgroundColor: "#90e0ef"
         },
         {
           label: 'MLRS',
           data: mlrsData,
-          backgroundColor: "#eb5e28",
+          backgroundColor: "#eb5e28"
         },
         {
           label: 'AA',
           data: aaData,
-          backgroundColor: "#7a6c5d",
+          backgroundColor: "#7a6c5d"
         },
         {
           label: 'airplanes',
           data: planesData,
-          backgroundColor: "#2a3d45",
+          backgroundColor: "#2a3d45"
         },
         {
           label: 'helicopters',
           data: helicoptersData,
-          backgroundColor: "#ffc6ff",
+          backgroundColor: "#ffc6ff"
         },
         {
           label: 'vehicles',
           data: vehiclesData,
-          backgroundColor: "#f4d58d",
+          backgroundColor: "#f4d58d"
         },
         {
           label: 'boats',
           data: boatsData,
-          backgroundColor: "#c17c74",
+          backgroundColor: "#c17c74"
         },
         {
           label: 'fuel tanks',
           data: fuelTanksData,
-          backgroundColor: "#ef476f",
+          backgroundColor: "#ef476f"
         },
         {
           label: 'UAV',
           data: uavData,
-          backgroundColor: "#ffdd00",
+          backgroundColor: "#ffdd00"
         },
         {
           label: 'special equipment',
           data: specialData,
-          backgroundColor: "#06d6a0",
+          backgroundColor: "#06d6a0"
         },
         {
           label: 'SRBM',
           data: srbmData,
-          backgroundColor: "#118ab2",
+          backgroundColor: "#118ab2"
         }
       ]
     }
 
-    const ctx = document.getElementById('myChart').getContext('2d');
-    const myChart = new Chart(ctx, {
+    const ctx = document.getElementById('chart').getContext('2d');
+    const chart = new Chart(ctx, {
       type: 'bar',
       data: data,
       options: {
@@ -1434,6 +1473,30 @@
         }
       }
     });
+
+    document.querySelector("#showall").addEventListener('click', () => {
+      chart.data.datasets.forEach((ds, i) => {
+        let meta = chart.getDatasetMeta(i);
+        meta.hidden = false;
+      });
+      chart.update();
+    });
+
+    document.querySelector("#hideall").addEventListener('click', () => {
+      chart.data.datasets.forEach((ds, i) => {
+        let meta = chart.getDatasetMeta(i);
+        meta.hidden = true;
+      });
+      chart.update();
+    });
+
+    // document.querySelector("#toggleall").addEventListener('click', () => {
+    //   chart.data.datasets.forEach((ds, i) => {
+    //     let meta = chart.getDatasetMeta(i);
+    //     meta.hidden = !meta.hidden;
+    //   });
+    //   chart.update();
+    // });
   </script>
 </body>
 
