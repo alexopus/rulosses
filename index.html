@@ -72,6 +72,13 @@
       border-collapse: collapse;
     }
 
+    .waffle th {
+      font-size: 14px;
+      font-weight: normal;
+      padding: 2px 3px 2px 3px;
+      border: 1px solid #111;
+    }
+
     .waffle td {
       border: 1px solid #111;
       white-space: nowrap;
@@ -82,6 +89,11 @@
       color: #ddd;
       padding: 2px 3px 2px 3px;
       background-color: #242021;
+      text-align: left;
+    }
+
+    .waffle td small {
+      color: green;
     }
 
     .waffle .hdr {
@@ -181,6 +193,14 @@
   <script src="vendor/chart.min.js"></script>
   <script src="vendor/nouislider.min.js"></script>
   <script>
+    function getSigned(n) {
+      if (n > 0) {
+        return "+" + n;
+      } else {
+        return n.toString();
+      }
+    }
+
     const all = [
       { date: '24.02.2022', pers: 0,      tanks: 0,    apv: 0,    arti: 0,    mlrs: 0,   aa: 0,   planes: 0,   helis: 0,   uav: 0,    cruise: 0,   boats: 0,  vehic: 0,    spec: 0,   src: '' },
       { date: '25.02.2022', pers: 0,      tanks: 0,    apv: 0,    arti: 0,    mlrs: 0,   aa: 0,   planes: 0,   helis: 0,   uav: 0,    cruise: 0,   boats: 0,  vehic: 0,    spec: 0,   src: '' },
@@ -672,39 +692,53 @@
 
     let HTML = '<table class="waffle" cellspacing="0" cellpadding="0">';
     HTML += '<tr>';
-    HTML += '  <td class="hdr">date</td>';
-    HTML += '  <td class="hdr">personnel</td>';
-    HTML += '  <td class="hdr">tanks</td>';
-    HTML += '  <td class="hdr">APV</td>';
-    HTML += '  <td class="hdr">artillery</td>';
-    HTML += '  <td class="hdr">MLRS</td>';
-    HTML += '  <td class="hdr">AA</td>';
-    HTML += '  <td class="hdr">planes</td>';
-    HTML += '  <td class="hdr">helicopters</td>';
-    HTML += '  <td class="hdr">vehicles &<br>fuel tanks</td>';
-    HTML += '  <td class="hdr">boats</td>';
-    HTML += '  <td class="hdr">UAV</td>';
-    HTML += '  <td class="hdr">special<br>equipment</td>';
-    HTML += '  <td class="hdr">cruise<br>missles</td>';
-    HTML += '  <td class="hdr">source</td>';
+    HTML += '  <th class="hdr">date</th>';
+    HTML += '  <th class="hdr">personnel</th>';
+    HTML += '  <th class="hdr">tanks</th>';
+    HTML += '  <th class="hdr">APV</th>';
+    HTML += '  <th class="hdr">artillery</th>';
+    HTML += '  <th class="hdr">MLRS</th>';
+    HTML += '  <th class="hdr">AA</th>';
+    HTML += '  <th class="hdr">planes</th>';
+    HTML += '  <th class="hdr">helicopters</th>';
+    HTML += '  <th class="hdr">vehicles &<br>fuel tanks</th>';
+    HTML += '  <th class="hdr">boats</th>';
+    HTML += '  <th class="hdr">UAV</th>';
+    HTML += '  <th class="hdr">special<br>equipment</th>';
+    HTML += '  <th class="hdr">cruise<br>missles</th>';
+    HTML += '  <th class="hdr">source</th>';
     HTML += '</tr>';
 
     all.forEach((e, i, a) => {
+      persDiff =   i > 0 ? e.pers   - a[i-1].pers   : 0;
+      tanksDiff =  i > 0 ? e.tanks  - a[i-1].tanks  : 0;
+      apvDiff =    i > 0 ? e.apv    - a[i-1].apv    : 0;
+      artiDiff =   i > 0 ? e.arti   - a[i-1].arti   : 0;
+      mlrsDiff =   i > 0 ? e.mlrs   - a[i-1].mlrs   : 0;
+      aaDiff =     i > 0 ? e.aa     - a[i-1].aa     : 0;
+      planesDiff = i > 0 ? e.planes - a[i-1].planes : 0;
+      helisDiff =  i > 0 ? e.helis  - a[i-1].helis  : 0;
+      vehicDiff =  i > 0 ? e.vehic  - a[i-1].vehic  : 0;
+      boatsDiff =  i > 0 ? e.boats  - a[i-1].boats  : 0;
+      uavDiff =    i > 0 ? e.uav    - a[i-1].uav    : 0;
+      specDiff =   i > 0 ? e.spec   - a[i-1].spec   : 0;
+      cruiseDiff = i > 0 ? e.cruise - a[i-1].cruise : 0;
+
       HTML += '<tr>';
       HTML += '<td class="hdr">' + e.date + '</td>';
-      HTML += '<td>' + (e.pers   !== 0 ? e.pers   : '') + '</td>';
-      HTML += '<td>' + (e.tanks  !== 0 ? e.tanks  : '') + '</td>';
-      HTML += '<td>' + (e.apv    !== 0 ? e.apv    : '') + '</td>';
-      HTML += '<td>' + (e.arti   !== 0 ? e.arti   : '') + '</td>';
-      HTML += '<td>' + (e.mlrs   !== 0 ? e.mlrs   : '') + '</td>';
-      HTML += '<td>' + (e.aa     !== 0 ? e.aa     : '') + '</td>';
-      HTML += '<td>' + (e.planes !== 0 ? e.planes : '') + '</td>';
-      HTML += '<td>' + (e.helis  !== 0 ? e.helis  : '') + '</td>';
-      HTML += '<td>' + (e.vehic  !== 0 ? e.vehic  : '') + '</td>';
-      HTML += '<td>' + (e.boats  !== 0 ? e.boats  : '') + '</td>';
-      HTML += '<td>' + (e.uav    !== 0 ? e.uav    : '') + '</td>';
-      HTML += '<td>' + (e.spec   !== 0 ? e.spec   : '') + '</td>';
-      HTML += '<td>' + (e.cruise !== 0 ? e.cruise : '') + '</td>';
+      HTML += '<td>' + (e.pers   !== 0 ? (e.pers   + (persDiff   != 0 ? ' (<small>' + getSigned(persDiff)   + '</small>)' : '' ))     : '') + '</td>';
+      HTML += '<td>' + (e.tanks  !== 0 ? (e.tanks  + (tanksDiff  != 0 ? ' (<small>' + getSigned(tanksDiff)  + '</small>)' : '' ))     : '') + '</td>';
+      HTML += '<td>' + (e.apv    !== 0 ? (e.apv    + (apvDiff    != 0 ? ' (<small>' + getSigned(apvDiff)    + '</small>)' : '' ))     : '') + '</td>';
+      HTML += '<td>' + (e.arti   !== 0 ? (e.arti   + (artiDiff   != 0 ? ' (<small>' + getSigned(artiDiff)   + '</small>)' : '' ))     : '') + '</td>';
+      HTML += '<td>' + (e.mlrs   !== 0 ? (e.mlrs   + (mlrsDiff   != 0 ? ' (<small>' + getSigned(mlrsDiff)   + '</small>)' : '' ))     : '') + '</td>';
+      HTML += '<td>' + (e.aa     !== 0 ? (e.aa     + (aaDiff     != 0 ? ' (<small>' + getSigned(aaDiff)     + '</small>)' : '' ))     : '') + '</td>';
+      HTML += '<td>' + (e.planes !== 0 ? (e.planes + (planesDiff != 0 ? ' (<small>' + getSigned(planesDiff) + '</small>)' : '' ))     : '') + '</td>';
+      HTML += '<td>' + (e.helis  !== 0 ? (e.helis  + (helisDiff  != 0 ? ' (<small>' + getSigned(helisDiff)  + '</small>)' : '' ))     : '') + '</td>';
+      HTML += '<td>' + (e.vehic  !== 0 ? (e.vehic  + (vehicDiff  != 0 ? ' (<small>' + getSigned(vehicDiff)  + '</small>)' : '' ))     : '') + '</td>';
+      HTML += '<td>' + (e.boats  !== 0 ? (e.boats  + (boatsDiff  != 0 ? ' (<small>' + getSigned(boatsDiff)  + '</small>)' : '' ))     : '') + '</td>';
+      HTML += '<td>' + (e.uav    !== 0 ? (e.uav    + (uavDiff    != 0 ? ' (<small>' + getSigned(uavDiff)    + '</small>)' : '' ))     : '') + '</td>';
+      HTML += '<td>' + (e.spec   !== 0 ? (e.spec   + (specDiff   != 0 ? ' (<small>' + getSigned(specDiff)   + '</small>)' : '' ))     : '') + '</td>';
+      HTML += '<td>' + (e.cruise !== 0 ? (e.cruise + (cruiseDiff != 0 ? ' (<small>' + getSigned(cruiseDiff) + '</small>)' : '' ))     : '') + '</td>';
       HTML += '<td class="src">' + (e.src !== '' ? ('<a target="_blank" href="' + e.src + '">source</a>') : '') + '</td>';
       HTML += '</tr>';
 
@@ -725,19 +759,19 @@
         spec.push(e.spec);
         cruise.push(e.cruise);
       } else {
-        pers.push(e.pers - a[i-1].pers);
-        tanks.push(e.tanks - a[i-1].tanks);
-        apv.push(e.apv - a[i-1].apv);
-        arti.push(e.arti - a[i-1].arti);
-        mlrs.push(e.mlrs - a[i-1].mlrs);
-        aa.push(e.aa - a[i-1].aa);
-        planes.push(e.planes - a[i-1].planes);
-        helis.push(e.helis - a[i-1].helis);
-        vehic.push(e.vehic - a[i-1].vehic);
-        boats.push(e.boats - a[i-1].boats);
-        uav.push(e.uav - a[i-1].uav);
-        spec.push(e.spec - a[i-1].spec);
-        cruise.push(e.cruise - a[i-1].cruise);
+        pers.push(persDiff);
+        tanks.push(tanksDiff);
+        apv.push(apvDiff);
+        arti.push(artiDiff);
+        mlrs.push(mlrsDiff);
+        aa.push(aaDiff);
+        planes.push(planesDiff);
+        helis.push(helisDiff);
+        vehic.push(vehicDiff);
+        boats.push(boatsDiff);
+        uav.push(uavDiff);
+        spec.push(specDiff);
+        cruise.push(cruiseDiff);
       }
     });
 
