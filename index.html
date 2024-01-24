@@ -900,133 +900,77 @@
       { date: '24.01.2024', pers: 378660, tanks: 6227, apv: 11579, arti: 9008, mlrs: 971, aa: 659, planes: 331, helis: 324, uav: 6998, cruise: 1842, boats: 23, subs: 1, vehic: 12005, spec: 1416, src: 'https://www.mil.gov.ua/news/2024/01/24/vid-pochatku-povnomasshtabnogo-vtorgnennya-rf-do-ukraini-rosiya-vzhe-vtratila-378-660-osib-6227-tanki-9008-artsistem-%E2%80%93-genshtab-zsu/' },
     ];
 
-    const dates  = [];
-    const pers   = [];
-    const tanks  = [];
-    const apv    = [];
-    const arti   = [];
-    const mlrs   = [];
-    const aa     = [];
-    const planes = [];
-    const helis  = [];
-    const uav    = [];
-    const cruise = [];
-    const boats  = [];
-    const subs   = [];
-    const vehic  = [];
-    const spec   = [];
+    const dataCollection = { dates: [], pers: [], tanks: [], apv: [], arti: [], mlrs: [], aa: [], planes: [], helis: [], uav: [], cruise: [], boats: [], subs: [], vehic: [], spec: [] };
 
-    let HTML = '<table class="waffle" cellspacing="0" cellpadding="0">';
-    HTML += '<tr>';
-    HTML += '  <th class="hdr">date</th>';
-    HTML += '  <th class="hdr">personnel</th>';
-    HTML += '  <th class="hdr">tanks</th>';
-    HTML += '  <th class="hdr">APV</th>';
-    HTML += '  <th class="hdr">artillery</th>';
-    HTML += '  <th class="hdr">MLRS</th>';
-    HTML += '  <th class="hdr">AA</th>';
-    HTML += '  <th class="hdr">planes</th>';
-    HTML += '  <th class="hdr">helicopters</th>';
-    HTML += '  <th class="hdr">UAV</th>';
-    HTML += '  <th class="hdr">cruise<br>missles</th>';
-    HTML += '  <th class="hdr">boats</th>';
-    HTML += '  <th class="hdr">subs</th>';
-    HTML += '  <th class="hdr">vehicles &<br>fuel tanks</th>';
-    HTML += '  <th class="hdr">special<br>equipment</th>';
-    HTML += '  <th class="hdr">source</th>';
-    HTML += '</tr>';
+    let HTML = `
+      <table class="waffle" cellspacing="0" cellpadding="0">
+        <tr>
+          <th class="hdr">date</th>
+          <th class="hdr">personnel</th>
+          <th class="hdr">tanks</th>
+          <th class="hdr">APV</th>
+          <th class="hdr">artillery</th>
+          <th class="hdr">MLRS</th>
+          <th class="hdr">AA</th>
+          <th class="hdr">planes</th>
+          <th class="hdr">helicopters</th>
+          <th class="hdr">UAV</th>
+          <th class="hdr">cruise<br>missles</th>
+          <th class="hdr">boats</th>
+          <th class="hdr">subs</th>
+          <th class="hdr">vehicles</th>
+          <th class="hdr">special<br>equipment</th>
+          <th class="hdr">source</th>
+        </tr>
+    `;
 
     all.forEach((e, i, a) => {
-      persDiff =   i > 0 ? e.pers   - a[i-1].pers   : 0;
-      tanksDiff =  i > 0 ? e.tanks  - a[i-1].tanks  : 0;
-      apvDiff =    i > 0 ? e.apv    - a[i-1].apv    : 0;
-      artiDiff =   i > 0 ? e.arti   - a[i-1].arti   : 0;
-      mlrsDiff =   i > 0 ? e.mlrs   - a[i-1].mlrs   : 0;
-      aaDiff =     i > 0 ? e.aa     - a[i-1].aa     : 0;
-      planesDiff = i > 0 ? e.planes - a[i-1].planes : 0;
-      helisDiff =  i > 0 ? e.helis  - a[i-1].helis  : 0;
-      uavDiff =    i > 0 ? e.uav    - a[i-1].uav    : 0;
-      cruiseDiff = i > 0 ? e.cruise - a[i-1].cruise : 0;
-      boatsDiff =  i > 0 ? e.boats  - a[i-1].boats  : 0;
-      subsDiff =   i > 0 ? e.subs   - a[i-1].subs   : 0;
-      vehicDiff =  i > 0 ? e.vehic  - a[i-1].vehic  : 0;
-      specDiff =   i > 0 ? e.spec   - a[i-1].spec   : 0;
+      dataCollection.dates.push(e.date);
 
-      HTML += '<tr>';
-      HTML += '<td class="hdr">' + e.date + '</td>';
-      HTML += '<td>' + (e.pers   !== 0 ? (e.pers   + (persDiff   != 0 ? ' (<small>' + getSigned(persDiff)   + '</small>)' : '' )) : '') + '</td>';
-      HTML += '<td>' + (e.tanks  !== 0 ? (e.tanks  + (tanksDiff  != 0 ? ' (<small>' + getSigned(tanksDiff)  + '</small>)' : '' )) : '') + '</td>';
-      HTML += '<td>' + (e.apv    !== 0 ? (e.apv    + (apvDiff    != 0 ? ' (<small>' + getSigned(apvDiff)    + '</small>)' : '' )) : '') + '</td>';
-      HTML += '<td>' + (e.arti   !== 0 ? (e.arti   + (artiDiff   != 0 ? ' (<small>' + getSigned(artiDiff)   + '</small>)' : '' )) : '') + '</td>';
-      HTML += '<td>' + (e.mlrs   !== 0 ? (e.mlrs   + (mlrsDiff   != 0 ? ' (<small>' + getSigned(mlrsDiff)   + '</small>)' : '' )) : '') + '</td>';
-      HTML += '<td>' + (e.aa     !== 0 ? (e.aa     + (aaDiff     != 0 ? ' (<small>' + getSigned(aaDiff)     + '</small>)' : '' )) : '') + '</td>';
-      HTML += '<td>' + (e.planes !== 0 ? (e.planes + (planesDiff != 0 ? ' (<small>' + getSigned(planesDiff) + '</small>)' : '' )) : '') + '</td>';
-      HTML += '<td>' + (e.helis  !== 0 ? (e.helis  + (helisDiff  != 0 ? ' (<small>' + getSigned(helisDiff)  + '</small>)' : '' )) : '') + '</td>';
-      HTML += '<td>' + (e.uav    !== 0 ? (e.uav    + (uavDiff    != 0 ? ' (<small>' + getSigned(uavDiff)    + '</small>)' : '' )) : '') + '</td>';
-      HTML += '<td>' + (e.cruise !== 0 ? (e.cruise + (cruiseDiff != 0 ? ' (<small>' + getSigned(cruiseDiff) + '</small>)' : '' )) : '') + '</td>';
-      HTML += '<td>' + (e.boats  !== 0 ? (e.boats  + (boatsDiff  != 0 ? ' (<small>' + getSigned(boatsDiff)  + '</small>)' : '' )) : '') + '</td>';
-      HTML += '<td>' + (e.subs   !== 0 ? (e.subs   + (subsDiff   != 0 ? ' (<small>' + getSigned(subsDiff)   + '</small>)' : '' )) : '') + '</td>';
-      HTML += '<td>' + (e.vehic  !== 0 ? (e.vehic  + (vehicDiff  != 0 ? ' (<small>' + getSigned(vehicDiff)  + '</small>)' : '' )) : '') + '</td>';
-      HTML += '<td>' + (e.spec   !== 0 ? (e.spec   + (specDiff   != 0 ? ' (<small>' + getSigned(specDiff)   + '</small>)' : '' )) : '') + '</td>';
-      HTML += '<td class="src">' + (e.src !== '' ? ('<a target="_blank" href="' + e.src + '">source</a>') : '') + '</td>';
-      HTML += '</tr>';
+      let row = `<tr><td class="hdr">${e.date}</td>`;
 
-      dates.push(e.date);
-
-      if (i === 0) {
-        pers.push(e.pers);
-        tanks.push(e.tanks);
-        apv.push(e.apv);
-        arti.push(e.arti);
-        mlrs.push(e.mlrs);
-        aa.push(e.aa);
-        planes.push(e.planes);
-        helis.push(e.helis);
-        uav.push(e.uav);
-        cruise.push(e.cruise);
-        boats.push(e.boats);
-        subs.push(e.subs);
-        vehic.push(e.vehic);
-        spec.push(e.spec);
-      } else {
-        pers.push(persDiff);
-        tanks.push(tanksDiff);
-        apv.push(apvDiff);
-        arti.push(artiDiff);
-        mlrs.push(mlrsDiff);
-        aa.push(aaDiff);
-        planes.push(planesDiff);
-        helis.push(helisDiff);
-        uav.push(uavDiff);
-        cruise.push(cruiseDiff);
-        boats.push(boatsDiff);
-        subs.push(subsDiff);
-        vehic.push(vehicDiff);
-        spec.push(specDiff);
-      }
+      Object.keys(dataCollection).forEach(key => {
+        if (key !== 'dates') {
+          const diff = i > 0 ? e[key] - a[i - 1][key] : 0;
+          row += `<td>${e[key] !== 0 ? `${e[key]} ${diff !== 0 ? `(<small>${getSigned(diff)}</small>)` : ''}` : ''}</td>`;
+          dataCollection[key].push(i === 0 ? e[key] : diff);
+        }
+      });
+      row += `<td class="src">${e.src !== '' ? `<a target="_blank" href="${e.src}">source</a>` : ''}</td></tr>`;
+      HTML += row;
     });
 
     HTML += '</table>';
     document.getElementById('table-container').innerHTML = HTML;
 
-    const data = {
-      labels: dates,
-      datasets: [
-        { label: 'personnel',             data: pers,     backgroundColor: "#9b2226", hidden: true },
-        { label: 'tanks',                 data: tanks,    backgroundColor: "#0077b6" },
-        { label: 'APV',                   data: apv,      backgroundColor: "#588157" },
-        { label: 'artillery',             data: arti,     backgroundColor: "#90e0ef" },
-        { label: 'MLRS',                  data: mlrs,     backgroundColor: "#eb5e28" },
-        { label: 'AA',                    data: aa,       backgroundColor: "#7a6c5d" },
-        { label: 'airplanes',             data: planes,   backgroundColor: "#2a3d45" },
-        { label: 'helicopters',           data: helis,    backgroundColor: "#ffc6ff" },
-        { label: 'UAV',                   data: uav,      backgroundColor: "#ffdd00" },
-        { label: 'cruise missles',        data: cruise,   backgroundColor: "#e9ecef" },
-        { label: 'boats',                 data: boats,    backgroundColor: "#c17c74" },
-        { label: 'subs',                  data: subs,     backgroundColor: "#c17c74" },
-        { label: 'vehicles & fuel tanks', data: vehic,    backgroundColor: "#f4d58d" },
-        { label: 'special equipment',     data: spec,     backgroundColor: "#06d6a0" },
-      ]
+    const labels = ['personnel', 'tanks',   'APV',     'artillery', 'MLRS',    'AA',      'airplanes', 'helicopters', 'UAV',     'cruise missiles', 'boats',   'subs',    'vehicles', 'special equipment'];
+    const colors = ['#9b2226',   '#0077b6', '#588157', '#90e0ef',   '#eb5e28', '#7a6c5d', '#2a3d45',   '#ffc6ff',     '#ffdd00', '#e9ecef',         '#c17c74', '#c17c74', '#f4d58d',  '#06d6a0'];
+
+    const labelKeyMapping = {
+      'personnel':         'pers',
+      'tanks':             'tanks',
+      'APV':               'apv',
+      'artillery':         'arti',
+      'MLRS':              'mlrs',
+      'AA':                'aa',
+      'airplanes':         'planes',
+      'helicopters':       'helis',
+      'UAV':               'uav',
+      'cruise missiles':   'cruise',
+      'boats':             'boats',
+      'subs':              'subs',
+      'vehicles':          'vehic',
+      'special equipment': 'spec'
+    };
+
+    const chartData = {
+      labels: dataCollection.dates,
+      datasets: labels.map((label, index) => ({
+        label,
+        data: dataCollection[labelKeyMapping[label]],
+        backgroundColor: colors[index],
+        hidden: label === 'personnel'
+      }))
     };
 
     let slider = document.getElementById('slider');
@@ -1045,69 +989,40 @@
     const ctx = document.getElementById('chart').getContext('2d');
     const chart = new Chart(ctx, {
       type: 'bar',
-      data: data,
+      data: chartData,
       options: {
-        layout: {
-          padding: 1
-        },
+        layout: { padding: 1 },
         plugins: {
           legend: {
             display: true,
             position: 'bottom',
             labels: {
               color: '#ddd',
-              font: {
-                size: 14,
-                family: "'Roboto Condensed', sans-serif"
-              }
+              font: { size: 14, family: "'Roboto Condensed', sans-serif" }
             }
           },
           zoom: {
-            pan: {
-              enabled: true,
-              mode: 'x',
-              threshold: 5,
-            },
+            pan: { enabled: true, mode: 'x', threshold: 5, },
             zoom: {
-              wheel: {
-                enabled: true
-              },
-              pinch: {
-                enabled: true
-              },
+              wheel: { enabled: true },
+              pinch: { enabled: true },
               mode: 'x',
             },
           }
         },
-        interaction: {
-          mode: 'x'
-        },
+        interaction: { mode: 'x' },
         responsive: true,
         scales: {
           x: {
             stacked: true,
-            ticks: {
-              color: "#ddd"
-            },
-            grid: {
-              color: '#444'
-            }
+            ticks: { color: "#ddd" },
+            grid: { color: '#444' }
           },
           y: {
-            title: {
-              display: true,
-              text: 'units',
-              padding: 4
-            },
+            title: { display: true, text: 'units', padding: 4 },
             stacked: true,
-            ticks: {
-              color: "#ddd",
-              precision: 0,
-              beginAtZero: true // This makes sure the y-axis starts at 0. Workaround for a mistakes and/or corrections in the source data (e.g.: 28.05.2023, 03.10.2023)
-            },
-            grid: {
-              color: '#444'
-            },
+            ticks: { color: "#ddd", precision: 0, beginAtZero: true }, // Make sure the y-axis starts at 0. Workaround for a mistakes and/or corrections in the source data (e.g.: 28.05.2023, 03.10.2023)
+            grid: { color: '#444' },
             min: 0, // This ensures that the minimum value is 0. Workaround for a mistakes and/or corrections in the source data (e.g.: 28.05.2023, 03.10.2023)
           }
         }
