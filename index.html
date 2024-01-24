@@ -194,11 +194,7 @@
   <script src="vendor/nouislider.min.js"></script>
   <script>
     function getSigned(n) {
-      if (n > 0) {
-        return "+" + n;
-      } else {
-        return n.toString();
-      }
+      return n > 0 ? `+${n}` : n.toString();
     }
 
     const all = [
