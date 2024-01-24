@@ -176,7 +176,7 @@
       <div class="controls">
           <button id="showall" class="btn btn-g-left">show all</button>
           <button id="hideall" class="btn btn-g-right">hide all</button>
-          <button id="toggleView" class="btn btn-g">Toggle Daily/Weekly</button>
+          <!-- <button id="toggleView" class="btn btn-g">Toggle Daily/Weekly</button> -->
       </div>
       <p class="slider-label">Date range:</p>
       <div id="slider"></div>
@@ -905,7 +905,7 @@
       { date: '2024-01-24', pers: 378660, tanks: 6227, apv: 11579, arti: 9008, mlrs: 971, aa: 659, planes: 331, helis: 324, uav: 6998, cruise: 1842, boats: 23, subs: 1, vehic: 12005, spec: 1416, src: 'https://www.mil.gov.ua/news/2024/01/24/vid-pochatku-povnomasshtabnogo-vtorgnennya-rf-do-ukraini-rosiya-vzhe-vtratila-378-660-osib-6227-tanki-9008-artsistem-%E2%80%93-genshtab-zsu/' },
     ];
 
-    const dataCollection = { dates: [], pers: [], tanks: [], apv: [], arti: [], mlrs: [], aa: [], planes: [], helis: [], uav: [], cruise: [], boats: [], subs: [], vehic: [], spec: [] };
+    const dailyData = { dates: [], pers: [], tanks: [], apv: [], arti: [], mlrs: [], aa: [], planes: [], helis: [], uav: [], cruise: [], boats: [], subs: [], vehic: [], spec: [] };
 
     let HTML = `
       <table class="waffle" cellspacing="0" cellpadding="0">
@@ -935,22 +935,22 @@
       d.setUTCDate(d.getUTCDate() + 4 - (d.getUTCDay() || 7));
       var yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
       var weekNo = Math.ceil(((d - yearStart) / 86400000 + 1) / 7);
-      return weekNo;
+      return [d.getUTCFullYear(), weekNo];
     }
 
     all.forEach((e, i, a) => {
-      dataCollection.dates.push(e.date);
+      dailyData.dates.push(e.date);
 
       let row = `<tr>
         <td class="hdr">${e.date}</td>
-        <td class="centered">${getWeekNumber(e.date)}</td>
+        <td class="centered">${getWeekNumber(e.date)[1]}</td>
       `;
 
-      Object.keys(dataCollection).forEach(key => {
+      Object.keys(dailyData).forEach(key => {
         if (key !== 'dates') {
           const diff = i > 0 ? e[key] - a[i - 1][key] : 0;
           row += `<td>${e[key] !== 0 ? `${e[key]} ${diff !== 0 ? `(<small>${getSigned(diff)}</small>)` : ''}` : ''}</td>`;
-          dataCollection[key].push(i === 0 ? e[key] : diff);
+          dailyData[key].push(i === 0 ? e[key] : diff);
         }
       });
       row += `<td class="src">${e.src !== '' ? `<a target="_blank" href="${e.src}">source</a>` : ''}</td></tr>`;
@@ -981,10 +981,10 @@
     };
 
     const chartData = {
-      labels: dataCollection.dates,
+      labels: dailyData.dates,
       datasets: labels.map((label, index) => ({
         label,
-        data: dataCollection[labelKeyMapping[label]],
+        data: dailyData[labelKeyMapping[label]],
         backgroundColor: colors[index],
         hidden: label === 'personnel'
       }))
@@ -993,10 +993,7 @@
     let slider = document.getElementById('slider');
     noUiSlider.create(slider, {
       start: [0, all.length],
-      range: {
-        'min': 0,
-        'max': all.length - 1
-      },
+      range: { 'min': 0, 'max': all.length - 1 },
       step: 1,
       connect: true,
       behaviour: 'tap-drag',
